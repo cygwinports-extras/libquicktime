@@ -1,0 +1,147 @@
+libquicktime
+------------------------------------------
+libquicktime is a library for reading and writing quicktime files. It is
+based on the quicktime4linux library, with a plugin-based interface.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  glib2-2.12.9-1
+  gtk2-x11-2.10.9-1
+  libavcodec51-20070413-1
+  libavutil49-20070413-1
+  libdv4-1.0.0-1
+  libfaac0-1.25-1
+  libfaad0-2.0-3
+  libiconv2-1.11-1
+  libintl8-0.15-1
+  libjpeg62-6b-12
+  libmp3lame0-3.97-1
+  libogg0-1.1.2-1
+  libpng12-1.2.12-1
+  libvorbis0-1.1.1-1
+  libvorbisenc2-1.1.1-1
+  libx264_54-20070213-1
+  zlib-1.2.3-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.2.11-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://libquicktime.sourceforge.net/
+
+Canonical download:
+  http://downloads.sourceforge.net/libquicktime/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libquicktime-1.0.0-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libquicktime-1.0.0-1.cygport all
+
+This will create:
+  /usr/src/libquicktime-1.0.0-1-src.tar.bz2
+  /usr/src/libquicktime-1.0.0-1.tar.bz2
+  /usr/src/libquicktime-devel-1.0.0-1.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(libquicktime)
+  /usr/bin/cygquicktime-0.dll
+  /usr/bin/libquicktime_config.exe
+  /usr/bin/lqt_transcode.exe
+  /usr/bin/qt2text.exe
+  /usr/bin/qtdechunk.exe
+  /usr/bin/qtdump.exe
+  /usr/bin/qtinfo.exe
+  /usr/bin/qtrechunk.exe
+  /usr/bin/qtstreamize.exe
+  /usr/bin/qtyuv4toyuv.exe
+  /usr/lib/libquicktime/lqt_audiocodec.dll
+  /usr/lib/libquicktime/lqt_audiocodec.la
+  /usr/lib/libquicktime/lqt_dv.dll
+  /usr/lib/libquicktime/lqt_dv.la
+  /usr/lib/libquicktime/lqt_faac.dll
+  /usr/lib/libquicktime/lqt_faac.la
+  /usr/lib/libquicktime/lqt_faad2.dll
+  /usr/lib/libquicktime/lqt_faad2.la
+  /usr/lib/libquicktime/lqt_ffmpeg.dll
+  /usr/lib/libquicktime/lqt_ffmpeg.la
+  /usr/lib/libquicktime/lqt_lame.dll
+  /usr/lib/libquicktime/lqt_lame.la
+  /usr/lib/libquicktime/lqt_mjpeg.dll
+  /usr/lib/libquicktime/lqt_mjpeg.la
+  /usr/lib/libquicktime/lqt_png.dll
+  /usr/lib/libquicktime/lqt_png.la
+  /usr/lib/libquicktime/lqt_rtjpeg.dll
+  /usr/lib/libquicktime/lqt_rtjpeg.la
+  /usr/lib/libquicktime/lqt_videocodec.dll
+  /usr/lib/libquicktime/lqt_videocodec.la
+  /usr/lib/libquicktime/lqt_vorbis.dll
+  /usr/lib/libquicktime/lqt_vorbis.la
+  /usr/lib/libquicktime/lqt_x264.dll
+  /usr/lib/libquicktime/lqt_x264.la
+  /usr/share/doc/Cygwin/libquicktime-1.0.0.README
+  /usr/share/doc/libquicktime-1.0.0/ABOUT-NLS
+  /usr/share/doc/libquicktime-1.0.0/COPYING
+  /usr/share/doc/libquicktime-1.0.0/ChangeLog
+  /usr/share/doc/libquicktime-1.0.0/INSTALL
+  /usr/share/doc/libquicktime-1.0.0/README
+  /usr/share/doc/libquicktime-1.0.0/TODO
+  /usr/share/locale/de/LC_MESSAGES/libquicktime.mo
+
+(libquicktime-devel)
+  /usr/bin/lqt-config
+  /usr/include/lqt/colormodels.h
+  /usr/include/lqt/lqt.h
+  /usr/include/lqt/lqt_atoms.h
+  /usr/include/lqt/lqt_codecapi.h
+  /usr/include/lqt/lqt_codecinfo.h
+  /usr/include/lqt/lqt_qtvr.h
+  /usr/include/lqt/lqt_version.h
+  /usr/include/lqt/quicktime.h
+  /usr/include/quicktime
+  /usr/lib/libquicktime.dll.a
+  /usr/lib/libquicktime.la
+  /usr/lib/pkgconfig/libquicktime.pc
+  /usr/share/aclocal/lqt.m4
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-1 -----
+Version bump.  Added FFmpeg and x264 support.
+lqtplay was removed due to dependency on libXv.
+
+----- version 0.9.10-1 -----
+Version bump.
+
+----- version 0.9.9-1 -----
+Version bump.
+
+----- version 0.9.8-1 -----
+Version bump.
+Now includes faac and faad plugins.
+
+----- version 0.9.7-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
