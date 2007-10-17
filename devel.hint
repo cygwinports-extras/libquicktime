@@ -1,5 +1,5 @@
 category: Audio Video
-requires: cygwin libiconv zlib
+requires: cygwin libiconv gettext zlib
 external-source: libquicktime
 sdesc: "QuickTime video library (development)"
 ldesc: "libquicktime is a library for reading and writing quicktime
