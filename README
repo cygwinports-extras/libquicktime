@@ -4,18 +4,18 @@ libquicktime is a library for reading and writing quicktime files. It is
 based on the quicktime4linux library, with a plugin-based interface.
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  glib2-2.14.6-1
-  gtk2-x11-2.12.9-1
-  libavcodec51-13270-1
-  libavutil49-13270-1
+  cygwin-1.5.25-15
+  glib2-2.16.4-1
+  gtk2-x11-2.12.11-1
+  libavcodec51-13777-1
+  libavutil49-13777-1
   libdv4-1.0.0-1
   libfaac0-1.26-1
   libfaad0-2.6.1-2
   libiconv2-1.11-1
   libintl8-0.15-1
   libjpeg62-6b-12
-  libmp3lame0-3.97-1
+  libmp3lame0-3.98-1
   libogg0-1.1.3-1
   libpng12-1.2.24-1
   libvorbis0-1.2.0-1
@@ -28,7 +28,7 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.10-1.10.1-1
   binutils-20060817-1
-  cygport-0.3.10-1
+  cygport-0.3.12-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   libtool-2.2.2-2
@@ -71,7 +71,6 @@ Files included in the binary packages:
   /usr/bin/qtrechunk.exe
   /usr/bin/qtstreamize.exe
   /usr/bin/qtyuv4toyuv.exe
-  /usr/share/doc/Cygwin/libquicktime-1.0.2.README
   /usr/share/doc/libquicktime-1.0.2/ABOUT-NLS
   /usr/share/doc/libquicktime-1.0.2/COPYING
   /usr/share/doc/libquicktime-1.0.2/ChangeLog
