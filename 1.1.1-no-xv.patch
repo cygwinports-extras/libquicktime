@@ -1,0 +1,10 @@
+--- origsrc/libquicktime-1.1.1/configure.ac	2008-12-17 05:13:10.000000000 -0600
++++ src/libquicktime-1.1.1/configure.ac	2008-12-31 00:44:46.846875000 -0600
+@@ -309,6 +309,7 @@
+ saveCFLAGS=$CFLAGS
+ CFLAGS="$CFLAGS $X_CFLAGS"
+ AC_CHECK_HEADER([X11/Xaw/Simple.h],[],no_x="yes")
++AC_CHECK_HEADER([X11/extensions/Xvlib.h],[],no_x="yes")
+ CFLAGS=$saveCFLAGS
+ fi
+ 

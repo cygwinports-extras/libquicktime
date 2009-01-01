@@ -1,0 +1,137 @@
+--- origsrc/libquicktime-1.0.3/plugins/audiocodec/Makefile.am	2008-05-17 07:40:16.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/audiocodec/Makefile.am	2008-07-16 18:07:39.890625000 -0500
+@@ -9,7 +9,7 @@
+ pcm.c \
+ lqt_audiocodec.c
+ 
+-lqt_audiocodec_la_LDFLAGS = -avoid-version -module
++lqt_audiocodec_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_audiocodec_la_LIBADD = @MODULE_LIBADD@
+ 
+ noinst_HEADERS = \
+--- origsrc/libquicktime-1.0.3/plugins/dv/Makefile.am	2008-05-17 07:44:17.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/dv/Makefile.am	2008-07-16 18:07:39.921875000 -0500
+@@ -4,7 +4,7 @@
+ pkglib_LTLIBRARIES = lqt_dv.la
+ 
+ lqt_dv_la_SOURCES = dv.c lqt_dv.c
+-lqt_dv_la_LDFLAGS = -avoid-version -module -lm
++lqt_dv_la_LDFLAGS = -avoid-version -module -no-undefined -lm
+ 
+ lqt_dv_la_LIBADD = @MODULE_LIBADD@ @LIBDV_LIBS@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/faac/Makefile.am	2008-05-17 07:43:00.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/faac/Makefile.am	2008-07-16 18:07:39.937500000 -0500
+@@ -6,6 +6,6 @@
+ pkglib_LTLIBRARIES = lqt_faac.la
+ 
+ lqt_faac_la_SOURCES = faac.c lqt_faac.c
+-lqt_faac_la_LDFLAGS = -avoid-version -module
++lqt_faac_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_faac_la_LIBADD = @FAAC_LIBS@ @MODULE_LIBADD@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/faad2/Makefile.am	2008-05-17 07:44:46.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/faad2/Makefile.am	2008-07-16 18:07:40.000000000 -0500
+@@ -4,6 +4,6 @@
+ pkglib_LTLIBRARIES = lqt_faad2.la
+ 
+ lqt_faad2_la_SOURCES = faad2.c lqt_faad2.c
+-lqt_faad2_la_LDFLAGS = -avoid-version -module
++lqt_faad2_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_faad2_la_LIBADD = @FAAD2_LIBS@ @MODULE_LIBADD@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/ffmpeg/Makefile.am	2008-05-17 07:45:14.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/ffmpeg/Makefile.am	2008-07-16 18:07:40.031250000 -0500
+@@ -14,7 +14,7 @@
+ pkglib_LTLIBRARIES = lqt_ffmpeg.la
+ 
+ lqt_ffmpeg_la_SOURCES = lqt_ffmpeg.c audio.c video.c params.c
+-lqt_ffmpeg_la_LDFLAGS = -avoid-version -module
++lqt_ffmpeg_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_ffmpeg_la_LIBADD = @MODULE_LIBADD@ @AVCODEC_LIBS@ $(libswscale_libs)
+ 
+ noinst_HEADERS = ffmpeg.h params.h
+--- origsrc/libquicktime-1.0.3/plugins/lame/Makefile.am	2008-05-17 07:43:59.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/lame/Makefile.am	2008-07-16 18:07:40.046875000 -0500
+@@ -7,6 +7,6 @@
+ 
+ AM_CFLAGS = @LAME_CFLAGS@ -DLOCALE_DIR=\"$(localedir)\"
+ 
+-lqt_lame_la_LDFLAGS = -avoid-version -module
++lqt_lame_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_lame_la_LIBADD = @MODULE_LIBADD@ @LAME_LIBS@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/mjpeg/Makefile.am	2008-05-17 07:44:31.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/mjpeg/Makefile.am	2008-07-16 18:07:40.109375000 -0500
+@@ -12,6 +12,6 @@
+ lqt_mjpeg.c \
+ libmjpeg.c
+ 
+-lqt_mjpeg_la_LDFLAGS = -avoid-version -module
++lqt_mjpeg_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_mjpeg_la_LIBADD = @JPEG_LIBS@ @MODULE_LIBADD@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/png/Makefile.am	2008-05-17 07:44:58.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/png/Makefile.am	2008-07-16 18:07:03.421875000 -0500
+@@ -4,6 +4,6 @@
+ pkglib_LTLIBRARIES = lqt_png.la
+ 
+ lqt_png_la_SOURCES = qtpng.c lqt_png.c
+-lqt_png_la_LDFLAGS = -avoid-version -module
++lqt_png_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_png_la_LIBADD = @LIBPNG_LIBS@ -lz -lm @MODULE_LIBADD@
+ 
+--- origsrc/libquicktime-1.0.3/plugins/rtjpeg/Makefile.am	2008-05-17 07:42:32.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/rtjpeg/Makefile.am	2008-07-16 18:07:40.125000000 -0500
+@@ -4,7 +4,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include
+ 
+ lqt_rtjpeg_la_SOURCES = rtjpeg_codec.c lqt_rtjpeg.c RTjpeg.c
+-lqt_rtjpeg_la_LDFLAGS = -avoid-version -module
++lqt_rtjpeg_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_rtjpeg_la_LIBADD = @MODULE_LIBADD@
+ 
+ noinst_HEADERS = RTjpeg.h rtjpeg_codec.h mmx.h
+--- origsrc/libquicktime-1.0.3/plugins/videocodec/Makefile.am	2008-05-17 07:41:31.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/videocodec/Makefile.am	2008-07-16 18:07:40.156250000 -0500
+@@ -16,7 +16,7 @@
+ videocodec.c \
+ lqt_videocodec.c
+ 
+-lqt_videocodec_la_LDFLAGS = -avoid-version -module
++lqt_videocodec_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_videocodec_la_LIBADD = @MODULE_LIBADD@
+ 
+ 
+--- origsrc/libquicktime-1.0.3/plugins/vorbis/Makefile.am	2008-05-17 07:45:33.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/vorbis/Makefile.am	2008-07-16 18:07:40.203125000 -0500
+@@ -4,7 +4,7 @@
+ pkglib_LTLIBRARIES = lqt_vorbis.la
+ 
+ lqt_vorbis_la_SOURCES = vorbis.c lqt_vorbis.c
+-lqt_vorbis_la_LDFLAGS = -avoid-version -module
++lqt_vorbis_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_vorbis_la_LIBADD = @MODULE_LIBADD@ @VORBISENC_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@
+ 
+ noinst_HEADERS = qtvorbis.h
+--- origsrc/libquicktime-1.0.3/plugins/x264/Makefile.am	2008-05-17 07:43:37.000000000 -0500
++++ src/libquicktime-1.0.3/plugins/x264/Makefile.am	2008-07-16 18:07:40.218750000 -0500
+@@ -4,6 +4,6 @@
+ pkglib_LTLIBRARIES = lqt_x264.la
+ 
+ lqt_x264_la_SOURCES = x264.c lqt_x264.c
+-lqt_x264_la_LDFLAGS = -avoid-version -module
++lqt_x264_la_LDFLAGS = -avoid-version -module -no-undefined
+ lqt_x264_la_LIBADD = @X264_LIBS@ @MODULE_LIBADD@
+ 
+--- origsrc/libquicktime-1.0.3/src/Makefile.am	2008-05-17 07:28:18.000000000 -0500
++++ src/libquicktime-1.0.3/src/Makefile.am	2008-07-16 18:06:50.453125000 -0500
+@@ -9,7 +9,7 @@
+ #
+ libquicktime_la_LIBADD = @ICONV_LIBS@ @LTLIBINTL@
+ 
+-libquicktime_la_LDFLAGS = -export-dynamic
++libquicktime_la_LDFLAGS = -export-dynamic -no-undefined
+ 
+ # build only the files, which can be compiled
+ 

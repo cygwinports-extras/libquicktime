@@ -1,0 +1,29 @@
+DESCRIPTION="QuickTime video library and player"
+HOMEPAGE="http://libquicktime.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+PATCH_URI="1.0.3-no-undefined.patch
+           1.1.1-no-xv.patch"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
+PKG_HINTS="setup runtime devel"
+libquicktime_CONTENTS='--exclude=aclocal usr/bin/*.exe usr/share/'
+libquicktime0_CONTENTS="usr/bin/*-0.dll usr/lib/${PN}/"
+libquicktime_devel_CONTENTS='usr/bin/lqt-config usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/ usr/share/aclocal/'
+
+DISTCLEANFILES="lqt_version.h"
+DIFF_EXCLUDES="m4"
+
+CYGCONF_ARGS="
+	--enable-gpl
+	--disable-mmx
+	--disable-firewire
+	--without-alsa
+	--without-cpuflags
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dosym lqt /usr/include/quicktime
+}
