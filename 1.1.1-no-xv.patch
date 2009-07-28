@@ -1,3 +1,5 @@
+lqtplay requires XVideo.
+
 --- origsrc/libquicktime-1.1.1/configure.ac	2008-12-17 05:13:10.000000000 -0600
 +++ src/libquicktime-1.1.1/configure.ac	2008-12-31 00:44:46.846875000 -0600
 @@ -309,6 +309,7 @@

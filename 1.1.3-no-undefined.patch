@@ -1,0 +1,22 @@
+--- origsrc/libquicktime-1.1.3/configure.ac	2009-07-17 10:33:42.161090600 -0500
++++ src/libquicktime-1.1.3/configure.ac	2009-07-17 10:35:40.238894900 -0500
+@@ -880,7 +880,7 @@ CFLAGS="$CFLAGS $COMMON_CFLAGS"
+ # libtool version does not support linking libraries with uninstalled
+ # libraries as occurs when Debian packages are created for the 1st time.
+ # Linking against old libraries may not be desirable!
+-MODULE_LIBADD=../../src/libquicktime.la 
++MODULE_LIBADD="../../src/libquicktime.la -no-undefined"
+ AC_SUBST(MODULE_LIBADD)
+ 
+ UTIL_LIBADD=../src/libquicktime.la
+--- origsrc/libquicktime-1.1.3/src/Makefile.am	2008-07-26 09:46:52.000000000 -0500
++++ src/libquicktime-1.1.3/src/Makefile.am	2009-07-17 10:46:59.577529900 -0500
+@@ -9,7 +9,7 @@ AM_CFLAGS = -DLOCALE_DIR=\"$(localedir)\
+ #
+ libquicktime_la_LIBADD = @ICONV_LIBS@ @LTLIBINTL@
+ 
+-libquicktime_la_LDFLAGS = -export-dynamic
++libquicktime_la_LDFLAGS = -export-dynamic -no-undefined
+ 
+ # build only the files, which can be compiled
+ 

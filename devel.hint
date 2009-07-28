@@ -1,5 +1,5 @@
 category: Audio Video
-requires: libquicktime0 libiconv gettext zlib
+requires: libquicktime0 libiconv gettext zlib-devel
 external-source: libquicktime
 sdesc: "QuickTime video library (development)"
 ldesc: "libquicktime is a library for reading and writing quicktime

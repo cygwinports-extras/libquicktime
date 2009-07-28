@@ -4,36 +4,38 @@ libquicktime is a library for reading and writing quicktime files. It is
 based on the quicktime4linux library, with a plugin-based interface.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  libavcodec52-17736-1
-  libavutil49-17736-1
-  libdv4-1.0.0-1
-  libfaac0-1.28-1
-  libfaad2-2.7-1
-  libglib2.0_0-2.18.4-1
-  libgtk2.0_0-2.14.7-2
-  libiconv2-1.12-1
-  libintl8-0.17-2
-  libjpeg62-6b-12
-  libmp3lame0-3.98.2-1
+  cygwin-1.7.0-52
+  libavcodec52-0.5-1
+  libavutil49-0.5-1
+  libfaac0-1.28-10
+  libfaad2-2.7-10
+  libgcc1-4.3.2-2
+  libglib2.0_0-2.20.4-1
+  libgtk2.0_0-2.16.5-1
+  libiconv2-1.13-10
+  libintl8-0.17-11
+  libjpeg62-6b-20
+  libmp3lame0-3.98.2-10
   libogg0-1.1.3-1
-  libpng12-1.2.34-1
-  libvorbis0-1.2.0-1
-  libvorbisenc2-1.2.0-1
-  libx264_66-20090301-1
-  zlib-1.2.3-2
+  libpng12-1.2.35-10
+  libschroedinger1.0_0-1.0.7-1
+  libswscale0-0.5-1
+  libvorbis0-1.2.0-2
+  libvorbisenc2-1.2.0-2
+  libx264_68-20090712-1
+  zlib0-1.2.3-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-1
-  automake1.10-1.10.1-2
-  binutils-20080624-2
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  libtool-2.2.6a-1
+  autoconf2.5-2.63-10
+  automake1.10-1.10.2-10
+  binutils-2.19.51-1
+  cygport-0.9.8-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-14
   make-3.81-2
-  pkg-config-0.23a-2
+  pkg-config-0.23b-10
   sed-4.1.5-2
 
 Canonical website:
@@ -45,17 +47,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libquicktime-1.1.1-X-src.tar.bz2
+  unpack libquicktime-1.1.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libquicktime-1.1.1-X.cygport all
+  cygport ./libquicktime-1.1.3-X.cygport all
 
 This will create:
-  /usr/src/libquicktime-1.1.1-X-src.tar.bz2
-  /usr/src/libquicktime-1.1.1-X.tar.bz2
-  /usr/src/libquicktime-devel-1.1.1-X.tar.bz2
-  /usr/src/libquicktime0-1.1.1-X.tar.bz2
+  /usr/src/libquicktime-1.1.3-X-src.tar.bz2
+  /usr/src/libquicktime-1.1.3-X.tar.bz2
+  /usr/src/libquicktime-devel-1.1.3-X.tar.bz2
+  /usr/src/libquicktime0-1.1.3-X.tar.bz2
 
 -------------------------------------------
 
@@ -71,20 +73,16 @@ Files included in the binary packages:
   /usr/bin/qtrechunk.exe
   /usr/bin/qtstreamize.exe
   /usr/bin/qtyuv4toyuv.exe
-  /usr/share/doc/libquicktime-1.1.1/ABOUT-NLS
-  /usr/share/doc/libquicktime-1.1.1/COPYING
-  /usr/share/doc/libquicktime-1.1.1/ChangeLog
-  /usr/share/doc/libquicktime-1.1.1/INSTALL
-  /usr/share/doc/libquicktime-1.1.1/README
-  /usr/share/doc/libquicktime-1.1.1/TODO
+  /usr/share/doc/libquicktime/COPYING
+  /usr/share/doc/libquicktime/ChangeLog
+  /usr/share/doc/libquicktime/README
+  /usr/share/doc/libquicktime/TODO
   /usr/share/locale/de/LC_MESSAGES/libquicktime.mo
 
 (libquicktime0)
   /usr/bin/cygquicktime-0.dll
   /usr/lib/libquicktime/lqt_audiocodec.dll
   /usr/lib/libquicktime/lqt_audiocodec.la
-  /usr/lib/libquicktime/lqt_dv.dll
-  /usr/lib/libquicktime/lqt_dv.la
   /usr/lib/libquicktime/lqt_faac.dll
   /usr/lib/libquicktime/lqt_faac.la
   /usr/lib/libquicktime/lqt_faad2.dll
@@ -99,6 +97,8 @@ Files included in the binary packages:
   /usr/lib/libquicktime/lqt_png.la
   /usr/lib/libquicktime/lqt_rtjpeg.dll
   /usr/lib/libquicktime/lqt_rtjpeg.la
+  /usr/lib/libquicktime/lqt_schroedinger.dll
+  /usr/lib/libquicktime/lqt_schroedinger.la
   /usr/lib/libquicktime/lqt_videocodec.dll
   /usr/lib/libquicktime/lqt_videocodec.la
   /usr/lib/libquicktime/lqt_vorbis.dll
@@ -121,45 +121,14 @@ Files included in the binary packages:
   /usr/lib/libquicktime.la
   /usr/lib/pkgconfig/libquicktime.pc
   /usr/share/aclocal/lqt.m4
+  /usr/share/doc/libquicktime/apiref/*
 
 ------------------
 
 Port Notes:
 
------ version 1.1.1-2 -----
-Rebuilt for API changes in FAAD, FFmpeg, and x264.
-
------ version 1.1.1-1 -----
-Version bump.
-
------ version 1.0.3-1 -----
-Version bump.
-
------ version 1.0.2-2 -----
-Rebuilt for updated ffmpeg and x264.
-
------ version 1.0.2-1 -----
-Version bump.
-
------ version 1.0.1-1 -----
-Version bump.
-
------ version 1.0.0-1 -----
-Version bump.  Added FFmpeg and x264 support.
-lqtplay was removed due to dependency on libXv.
-
------ version 0.9.10-1 -----
-Version bump.
-
------ version 0.9.9-1 -----
-Version bump.
-
------ version 0.9.8-1 -----
-Version bump.
-Now includes faac and faad plugins.
-
------ version 0.9.7-1 -----
-Initial release for Cygwin.
+----- version 1.1.3-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
