@@ -1,5 +1,5 @@
 category: Audio Video
-requires: libavcodec52 libavutil49 libfaac0 libfaad2 libgcc1 libiconv2 libintl8 libjpeg62 libmp3lame0 libogg0 libpng12 libschroedinger1.0_0 libswscale0 libvorbis0 libvorbisenc2 libx264_68 zlib0
+requires: libavcodec52 libavutil50 libfaad2 libgcc1 libiconv2 libintl8 libjpeg7 libmp3lame0 libogg0 libpng12 libschroedinger1.0_0 libswscale0 libvorbis0 libvorbisenc2 libx264_84 zlib0
 external-source: libquicktime
 sdesc: "QuickTime video library and player (runtime)"
 ldesc: "libquicktime is a library for reading and writing quicktime

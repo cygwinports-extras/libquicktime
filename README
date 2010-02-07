@@ -4,36 +4,35 @@ libquicktime is a library for reading and writing quicktime files. It is
 based on the quicktime4linux library, with a plugin-based interface.
 
 Runtime requirements:
-  cygwin-1.7.0-52
-  libavcodec52-0.5-1
-  libavutil49-0.5-1
-  libfaac0-1.28-10
+  cygwin-1.7.1-1
+  libavcodec52-20100207-1
+  libavutil50-20100207-1
   libfaad2-2.7-10
-  libgcc1-4.3.2-2
-  libglib2.0_0-2.20.4-1
-  libgtk2.0_0-2.16.5-1
-  libiconv2-1.13-10
+  libgcc1-4.3.4-3
+  libglib2.0_0-2.22.4-2
+  libgtk2.0_0-2.18.6-1
+  libiconv2-1.13.1-1
   libintl8-0.17-11
-  libjpeg62-6b-20
+  libjpeg7-7-10
   libmp3lame0-3.98.2-10
-  libogg0-1.1.3-1
+  libogg0-1.1.4-1
   libpng12-1.2.35-10
   libschroedinger1.0_0-1.0.7-1
-  libswscale0-0.5-1
-  libvorbis0-1.2.0-2
-  libvorbisenc2-1.2.0-2
-  libx264_68-20090712-1
+  libswscale0-20100207-1
+  libvorbis0-1.2.3-1
+  libvorbisenc2-1.2.3-1
+  libx264_84-20100207-1
   zlib0-1.2.3-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-10
-  automake1.10-1.10.2-10
+  autoconf2.5-2.65-1
+  automake1.10-1.10.3-1
   binutils-2.19.51-1
-  cygport-0.9.8-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  libtool-2.2.7a-14
+  cygport-0.9.80-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-3
+  libtool-2.2.7a-15
   make-3.81-2
   pkg-config-0.23b-10
   sed-4.1.5-2
@@ -47,85 +46,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libquicktime-1.1.3-X-src.tar.bz2
+  unpack libquicktime-1.1.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libquicktime-1.1.3-X.cygport all
+  cygport ./libquicktime-1.1.4-X.cygport all
 
 This will create:
-  /usr/src/libquicktime-1.1.3-X-src.tar.bz2
-  /usr/src/libquicktime-1.1.3-X.tar.bz2
-  /usr/src/libquicktime-devel-1.1.3-X.tar.bz2
-  /usr/src/libquicktime0-1.1.3-X.tar.bz2
+  /usr/src/libquicktime-1.1.4-X-src.tar.bz2
+  /usr/src/libquicktime-1.1.4-X.tar.bz2
+  /usr/src/libquicktime-devel-1.1.4-X.tar.bz2
+  /usr/src/libquicktime0-1.1.4-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(libquicktime)
-  /usr/bin/libquicktime_config.exe
-  /usr/bin/lqt_transcode.exe
-  /usr/bin/qt2text.exe
-  /usr/bin/qtdechunk.exe
-  /usr/bin/qtdump.exe
-  /usr/bin/qtinfo.exe
-  /usr/bin/qtrechunk.exe
-  /usr/bin/qtstreamize.exe
-  /usr/bin/qtyuv4toyuv.exe
-  /usr/share/doc/libquicktime/COPYING
-  /usr/share/doc/libquicktime/ChangeLog
-  /usr/share/doc/libquicktime/README
-  /usr/share/doc/libquicktime/TODO
-  /usr/share/locale/de/LC_MESSAGES/libquicktime.mo
-
-(libquicktime0)
-  /usr/bin/cygquicktime-0.dll
-  /usr/lib/libquicktime/lqt_audiocodec.dll
-  /usr/lib/libquicktime/lqt_audiocodec.la
-  /usr/lib/libquicktime/lqt_faac.dll
-  /usr/lib/libquicktime/lqt_faac.la
-  /usr/lib/libquicktime/lqt_faad2.dll
-  /usr/lib/libquicktime/lqt_faad2.la
-  /usr/lib/libquicktime/lqt_ffmpeg.dll
-  /usr/lib/libquicktime/lqt_ffmpeg.la
-  /usr/lib/libquicktime/lqt_lame.dll
-  /usr/lib/libquicktime/lqt_lame.la
-  /usr/lib/libquicktime/lqt_mjpeg.dll
-  /usr/lib/libquicktime/lqt_mjpeg.la
-  /usr/lib/libquicktime/lqt_png.dll
-  /usr/lib/libquicktime/lqt_png.la
-  /usr/lib/libquicktime/lqt_rtjpeg.dll
-  /usr/lib/libquicktime/lqt_rtjpeg.la
-  /usr/lib/libquicktime/lqt_schroedinger.dll
-  /usr/lib/libquicktime/lqt_schroedinger.la
-  /usr/lib/libquicktime/lqt_videocodec.dll
-  /usr/lib/libquicktime/lqt_videocodec.la
-  /usr/lib/libquicktime/lqt_vorbis.dll
-  /usr/lib/libquicktime/lqt_vorbis.la
-  /usr/lib/libquicktime/lqt_x264.dll
-  /usr/lib/libquicktime/lqt_x264.la
-
-(libquicktime-devel)
-  /usr/bin/lqt-config
-  /usr/include/lqt/colormodels.h
-  /usr/include/lqt/lqt.h
-  /usr/include/lqt/lqt_atoms.h
-  /usr/include/lqt/lqt_codecapi.h
-  /usr/include/lqt/lqt_codecinfo.h
-  /usr/include/lqt/lqt_qtvr.h
-  /usr/include/lqt/lqt_version.h
-  /usr/include/lqt/quicktime.h
-  /usr/include/quicktime
-  /usr/lib/libquicktime.dll.a
-  /usr/lib/libquicktime.la
-  /usr/lib/pkgconfig/libquicktime.pc
-  /usr/share/aclocal/lqt.m4
-  /usr/share/doc/libquicktime/apiref/*
-
-------------------
-
 Port Notes:
+
+----- version 1.1.4-1 -----
+Version bump.
 
 ----- version 1.1.3-1 -----
 Initial release for Cygwin 1.7.

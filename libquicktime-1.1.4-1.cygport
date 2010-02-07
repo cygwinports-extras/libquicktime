@@ -18,6 +18,7 @@ CYGCONF_ARGS="
 	--enable-gpl
 	--without-alsa
 	--without-cpuflags
+	--without-faac
 	--without-visibility
 "
 
