@@ -1,5 +1,5 @@
 category: Audio Video
-requires: libgcc1 libquicktime0
+requires: libintl8 libquicktime0
 sdesc: "QuickTime video library and player (applications)"
 ldesc: "libquicktime is a library for reading and writing quicktime
 files. It is based on the quicktime4linux library, with a plugin-based
