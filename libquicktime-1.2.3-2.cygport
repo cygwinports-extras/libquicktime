@@ -15,6 +15,7 @@ DISTCLEANFILES="include/quicktime/lqt_version.h"
 DIFF_EXCLUDES="m4"
 
 CYGCONF_ARGS="
+	--disable-static
 	--enable-gpl
 	--without-alsa
 	--without-cpuflags
@@ -28,3 +29,5 @@ src_install() {
 
 	dosym lqt /usr/include/quicktime
 }
+
+KEEP_LA_FILES="none"
