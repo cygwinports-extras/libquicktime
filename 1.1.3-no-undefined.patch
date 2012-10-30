@@ -1,5 +1,13 @@
 --- origsrc/libquicktime-1.1.3/configure.ac	2009-07-17 10:33:42.161090600 -0500
 +++ src/libquicktime-1.1.3/configure.ac	2009-07-17 10:35:40.238894900 -0500
+@@ -217,6 +217,7 @@ have_vorbis=false
+ AH_TEMPLATE([HAVE_VORBIS], [Vorbis libraries are there])
+   
+ if test "x$with_vorbis" != "xno"; then
++XIPH_PATH_OGG
+ XIPH_PATH_VORBIS(have_vorbis=true)
+ fi
+ AM_CONDITIONAL(HAVE_VORBIS, test x$have_vorbis = xtrue)
 @@ -880,7 +880,7 @@ CFLAGS="$CFLAGS $COMMON_CFLAGS"
  # libtool version does not support linking libraries with uninstalled
  # libraries as occurs when Debian packages are created for the 1st time.
@@ -9,6 +17,22 @@
  AC_SUBST(MODULE_LIBADD)
  
  UTIL_LIBADD=../src/libquicktime.la
+--- origsrc/libquicktime-1.2.4/plugins/vorbis/Makefile.am	2008-05-17 08:45:56.000000000 -0500
++++ src/libquicktime-1.2.4/plugins/vorbis/Makefile.am	2012-10-30 18:19:43.344739800 -0500
+@@ -1,11 +1,11 @@
+ localedir = $(datadir)/locale
+-AM_CFLAGS = @VORBIS_CFLAGS@ -DLOCALE_DIR=\"$(localedir)\"
++AM_CFLAGS = @VORBIS_CFLAGS@ @OGG_CFLAGS@ -DLOCALE_DIR=\"$(localedir)\"
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include/
+ pkglib_LTLIBRARIES = lqt_vorbis.la
+ 
+ lqt_vorbis_la_SOURCES = vorbis.c lqt_vorbis.c
+ lqt_vorbis_la_LDFLAGS = -avoid-version -module
+-lqt_vorbis_la_LIBADD = @MODULE_LIBADD@ @VORBISENC_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@
++lqt_vorbis_la_LIBADD = @MODULE_LIBADD@ @VORBISENC_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@ @OGG_LIBS@
+ 
+ noinst_HEADERS = qtvorbis.h
+ 
 --- origsrc/libquicktime-1.1.3/src/Makefile.am	2008-07-26 09:46:52.000000000 -0500
 +++ src/libquicktime-1.1.3/src/Makefile.am	2009-07-17 10:46:59.577529900 -0500
 @@ -9,7 +9,7 @@ AM_CFLAGS = -DLOCALE_DIR=\"$(localedir)\

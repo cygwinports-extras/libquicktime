@@ -1,7 +1,0 @@
-category: Audio Video
-requires: libquicktime0 zlib-devel
-external-source: libquicktime
-sdesc: "QuickTime video library (development)"
-ldesc: "libquicktime is a library for reading and writing quicktime
-files. It is based on the quicktime4linux library, with a plugin-based
-interface."
