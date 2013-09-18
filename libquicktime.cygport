@@ -1,23 +1,24 @@
 NAME="libquicktime"
 VERSION=1.2.4
-RELEASE=2
+RELEASE=3
 CATEGORY="Video"
 SUMMARY="QuickTime video library"
 DESCRIPTION="libquicktime is a library for reading and writing quicktime files.
 It is based on the quicktime4linux library, with a plugin-based interface."
 HOMEPAGE="http://libquicktime.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/libquicktime/${NAME}-${VERSION}.tar.gz"
 PATCH_URI="1.1.3-no-undefined.patch
            1.1.1-no-xv.patch"
 
-PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
+PKG_NAMES="libquicktime libquicktime0 libquicktime-devel libquicktime-doc"
 libquicktime_SUMMARY="QuickTime video utilities"
 libquicktime_CONTENTS='--exclude=aclocal --exclude=apiref usr/bin/*.exe usr/share/'
 libquicktime0_SUMMARY="${SUMMARY} (runtime)"
-libquicktime0_CONTENTS="usr/bin/*-0.dll usr/lib/${PN}/"
+libquicktime0_CONTENTS="usr/bin/*-0.dll usr/lib/libquicktime/"
 libquicktime_devel_SUMMARY="${SUMMARY} (development)"
-libquicktime_devel_CONTENTS="usr/include/ usr/lib/lib*.*
-                             usr/lib/pkgconfig/ usr/share/doc/${PN}/apiref/"
+libquicktime_devel_CONTENTS="usr/include/ usr/lib/lib*.* usr/lib/pkgconfig/"
+libquicktime_doc_CATEGORY="Doc"
+libquicktime_doc_CONTENTS="usr/share/doc/${NAME}/apiref/"
 
 DISTCLEANFILES="include/quicktime/lqt_version.h"
 DIFF_EXCLUDES="m4"
