@@ -1,6 +1,6 @@
 NAME="libquicktime"
 VERSION=1.2.4
-RELEASE=3
+RELEASE=4
 CATEGORY="Video"
 SUMMARY="QuickTime video library"
 DESCRIPTION="libquicktime is a library for reading and writing quicktime files.
