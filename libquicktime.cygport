@@ -1,6 +1,6 @@
 NAME="libquicktime"
 VERSION=1.2.4
-RELEASE=5
+RELEASE=6
 CATEGORY="Video"
 SUMMARY="QuickTime video library"
 DESCRIPTION="libquicktime is a library for reading and writing quicktime files.
@@ -8,8 +8,10 @@ It is based on the quicktime4linux library, with a plugin-based interface."
 HOMEPAGE="http://libquicktime.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libquicktime/${NAME}-${VERSION}.tar.gz"
 PATCH_URI="
-	mirror://portage/media-libs/libquicktime/files/libquicktime-1.2.4+libav-9.patch
-	mirror://portage/media-libs/libquicktime/files/libquicktime-1.2.4-ffmpeg2.patch
+	mirror://portage/media-libs/libquicktime/files/CVE-2016-2399.patch
+	http://pkgs.rpmfusion.org/cgit/free/libquicktime.git/plain/libquicktime-backport.patch
+	http://pkgs.rpmfusion.org/cgit/free/libquicktime.git/plain/libav10.patch#/libquicktime-1.2.4-libav10.patch
+	http://pkgs.rpmfusion.org/cgit/free/libquicktime.git/plain/ffmpeg_2.9.patch#/libquicktime-1.2.4-ffmpeg3.patch
 	1.1.3-no-undefined.patch
 	1.1.1-no-xv.patch
 "
@@ -25,13 +27,6 @@ libquicktime_doc_CATEGORY="Doc"
 libquicktime_doc_CONTENTS="usr/share/doc/${NAME}/apiref/"
 
 DISTCLEANFILES="include/quicktime/lqt_version.h"
-DIFF_EXCLUDES="m4"
-
-CYGPORT_USE_UNSTABLE_API=1
-src_patch_hook() {
-	# for ffmpeg-2.x
-	sed -i -e "s:CODEC_ID_:AV_&:g" ${S}/plugins/ffmpeg/*.c
-}
 
 CYGCONF_ARGS="
 	--enable-gpl

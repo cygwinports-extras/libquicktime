@@ -17,6 +17,26 @@
  AC_SUBST(MODULE_LIBADD)
  
  UTIL_LIBADD=../src/libquicktime.la
+--- origsrc/libquicktime-1.2.4/m4/avcodec.m4	2012-02-15 15:47:56.000000000 -0600
++++ src/libquicktime-1.2.4/m4/avcodec.m4	2017-03-30 11:23:02.514045700 -0500
+@@ -106,7 +106,7 @@ dnl
+ 
+ if test "x$avcodec_prefix" != x; then
+ AVCODEC_CFLAGS="-I$avcodec_prefix/include"
+-AVCODEC_LIBS="-L$avcodec_prefix/lib -lavcodec"
++AVCODEC_LIBS="-L$avcodec_prefix/lib -lavcodec -lavutil"
+ ACL_CHECK_AVCODEC([$1])
+   if test "x$avcodec_ok" = "xtrue"; then
+     avcodec_done="true"
+@@ -118,7 +118,7 @@ dnl Second Perference: Autodetect
+ dnl
+ 
+ if test "x$avcodec_done" = "xfalse"; then
+-  PKG_CHECK_MODULES(AVCODEC, libavcodec, avcodec_orig="true", avcodec_orig="false")
++  PKG_CHECK_MODULES(AVCODEC, libavcodec libavutil, avcodec_orig="true", avcodec_orig="false")
+ 
+ dnl
+ dnl No idea for what this is good but libavcodec is not found if this is missing
 --- origsrc/libquicktime-1.2.4/plugins/vorbis/Makefile.am	2008-05-17 08:45:56.000000000 -0500
 +++ src/libquicktime-1.2.4/plugins/vorbis/Makefile.am	2012-10-30 18:19:43.344739800 -0500
 @@ -1,11 +1,11 @@
